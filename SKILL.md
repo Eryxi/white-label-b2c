@@ -17,20 +17,36 @@ description: >-
      sections below; this line blocks the build on purpose until you do. -->
 
 <!-- GENERATED:START -- do not edit, overwritten by .github/scripts/recompile.mjs -->
-Compiled from this file's Variables section (preview fingerprint 9a04b45e).
+Compiled from this file's Variables section (content fingerprint 1e02c8fcb910).
 86 tokens, 5 collection(s), 7 mode(s): Dark theme, Hotel 1, Hotel 2, Hotel 3, Hotel 4, Light theme, Mode 1.
 <!-- GENERATED:END -->
 
 ## What this system contains
 
 <!-- CONTENTS:START -- do not edit, overwritten by .github/scripts/recompile.mjs -->
-Not yet compiled.
+86 tokens across 5 collection(s): Collection, Typography Variables, Dates, Theme, Hotel card variables.
+
+**Modes.** Dark theme, Hotel 1, Hotel 2, Hotel 3, Hotel 4, Light theme, Mode 1. A token's value differs per mode; read the mode you're targeting from `tokenSync.resolved` (or `tokenSync.modes` for the unresolved alias reference, if present — it may have been trimmed, see the Variables section note).
+
+**Primitive vs semantic.** This library publishes no primitive/semantic split that this pipeline could detect. Every token here is directly consumable — there's no reference-only layer to avoid.
+
+| Collection | Shape | Examples |
+|---|---|---|
+| Collection | flat-named | `Tag`, `Unavailability banner` |
+| Typography Variables | flat-named | `FontFamily`, `FontSize.H8_FontSize` |
+| Dates | flat-named | `dateFrom`, `dateTo` |
+| Theme | flat-named | `Neutral 900` |
+| Hotel card variables | flat-named | `Hotel name`, `Hotel address` |
+
+No multi-level alias chains detected (tokens either alias a target directly or don't alias at all).
+
+`$value` may be an unresolved reference (`{other.token.path}`); `$extensions.tokenSync.resolved` holds the literal. Always read the resolved value, never the raw `$value`, when the two might differ.
 <!-- CONTENTS:END -->
 
 ## What this system does NOT publish
 
 <!-- MISSING:START -- do not edit, overwritten by .github/scripts/recompile.mjs -->
-Not yet compiled.
+No tokens exist for: shadow/elevation, z-index, motion/duration, easing, breakpoints, opacity.
 <!-- MISSING:END -->
 
 If a task needs one of the categories listed above, say so and stop — don't improvise a
@@ -86,7 +102,14 @@ Auto-detected problems in the published data, each with a concrete workaround �
 style opinion, a specific thing that will bite you if you don't know about it.
 
 <!-- LINT:START -- do not edit, overwritten by .github/scripts/recompile.mjs -->
-No issues detected.
+1. Group `` mixes types (string, color, number, boolean) across siblings: `Tag`, `FontFamily`, `dateFrom`, `dateTo`, `dateFrom 1`, `dateTo 1`, `dateFrom 2`, `dateTo 2`, `dateFrom 3`, `dateTo 3`, `Neutral 900`, `Hotel name`, `Hotel address`, `Hotel distance`, `Rating`, `Rating state`, `Based on`, `Rooms nd nights`, `Hotel price`, `Unavailability banner`, `Similar properties`, `Room rates`, `Date cell`, `Check in`, `Check out`, `Choose room`, `Fontsize`, `Spacing`, `2nd non availability`, `State`, `One `, `Two`, `close`, `Old price`, `New price`, `old-price`, `price toast`, `refresh block`, `Refresh banner`, `Text field`, `Breakfast included tag`, `Breakfast and lunch tag`, `Pet friendly tag`, `Meal plan tag`, `Filter tags`, `Clear All button`, `Left arrow`, `Right arrow `, `Before check-in`, `After check-out`, `Nationaility`, `Placeholder`, `AI interactive text`, `AI interactive button`, `AI suggested questions`, `AI welcome`, `AI conversation`, `Hotel history`, `BBBBBB`, `AI Loading`, `Text ai`, `AI modal title`, `Smart filters text`, `Smart filters`, `Filtered hotels`, `Search semantic`, `Search section`, `Semantic dropdown`, `AI semantic text`, `Filter` — check whether one was published with the wrong type.
+2. `dateFrom 1` looks like an unrenamed Figma duplicate (ends in "1") — confirm this is an intentional variant, not a copy-paste leftover.
+3. `dateTo 1` looks like an unrenamed Figma duplicate (ends in "1") — confirm this is an intentional variant, not a copy-paste leftover.
+4. `dateFrom 2` looks like an unrenamed Figma duplicate (ends in "2") — confirm this is an intentional variant, not a copy-paste leftover.
+5. `dateTo 2` looks like an unrenamed Figma duplicate (ends in "2") — confirm this is an intentional variant, not a copy-paste leftover.
+6. `dateFrom 3` looks like an unrenamed Figma duplicate (ends in "3") — confirm this is an intentional variant, not a copy-paste leftover.
+7. `dateTo 3` looks like an unrenamed Figma duplicate (ends in "3") — confirm this is an intentional variant, not a copy-paste leftover.
+8. `Neutral 900` looks like an unrenamed Figma duplicate (ends in "900") — confirm this is an intentional variant, not a copy-paste leftover.
 <!-- LINT:END -->
 
 <!-- Anything you add below this line, outside the LINT markers, survives recompilation —
@@ -113,6 +136,92 @@ No issues detected.
 <!-- CSS:START -- do not edit, overwritten by .github/scripts/recompile.mjs -->
 ```css
 :root {
+  --2nd-non-availability: false;
+  --after-check-out: false;
+  --ai-conversation: false;
+  --ai-interactive-button: Disabled;
+  --ai-interactive-text: Ask anything...;
+  --ai-loading: 3;
+  --ai-modal-title: false;
+  --ai-semantic-text: Default;
+  --ai-suggested-questions: true;
+  --ai-welcome: true;
+  --based-on: Based on 173 reviews;
+  --bbbbbb: true;
+  --before-check-in: true;
+  --breakfast-and-lunch-tag: false;
+  --breakfast-included-tag: false;
+  --check-in: 10 Mai;
+  --check-out: 15 Mai;
+  --choose-room: Change your dates;
+  --clear-all-button: false;
+  --close: true;
+  --collection-old-price: #1F2A37; /* disambiguated: --old-price collided across 2 tokens */
+  --collection-old-price: false; /* disambiguated: --old-price collided across 2 tokens */
+  --date-cell: 0px;
+  --datefrom-1: 28 Apr;
+  --datefrom-2: 30 May;
+  --datefrom-3: 07 Jul;
+  --datefrom: 10 May;
+  --dateto-1: 4 May;
+  --dateto-2: 11 Jun;
+  --dateto-3: 26 Jul;
+  --dateto: 14 May;
+  --filter-tags: false;
+  --filter: false;
+  --filtered-hotels: true;
+  --fontfamily: Inter;
+  --fontsize-h1-fontsize: 56px;
+  --fontsize-h2-fontsize: 48px;
+  --fontsize-h3-fontsize: 40px;
+  --fontsize-h4-fontsize: 32px;
+  --fontsize-h5-fontsize: 28px;
+  --fontsize-h6-fontsize: 24px;
+  --fontsize-h7-fontsize: 20px;
+  --fontsize-h8-fontsize: 16px;
+  --fontsize: 18px;
+  --hotel-address: 41 White Church Lane, London;
+  --hotel-distance: 1 mile from centre;
+  --hotel-history: false;
+  --hotel-name: Club Quarters Hotel, St. Paul's;
+  --hotel-price: 5,725;
+  --left-arrow: false;
+  --lineheight-h1-lineheight: 68px;
+  --lineheight-h2-lineheight: 56px;
+  --lineheight-h3-lineheight: 48px;
+  --lineheight-h4-lineheight: 40px;
+  --lineheight-h5-lineheight: 32px;
+  --lineheight-h6-lineheight: 28px;
+  --lineheight-h7-lineheight: 24px;
+  --lineheight-h8-lineheight: 20px;
+  --meal-plan-tag: false;
+  --nationaility: Select nationality;
+  --neutral-900: #292829;
+  --new-price: #2D9F75;
+  --one: false;
+  --pet-friendly-tag: false;
+  --placeholder: #9DA4AE;
+  --price-toast: false;
+  --rating-state: Excellent;
+  --rating: 10px;
+  --refresh-banner: false;
+  --refresh-block: false;
+  --right-arrow: true;
+  --room-rates: false;
+  --rooms-nd-nights: 2 rooms x 3 nights;
+  --search-section: Manual;
+  --search-semantic: Enter a destination;
+  --semantic-dropdown: false;
+  --similar-properties: true;
+  --smart-filters-text: Example: I want a place with great reviews and free cancellation;
+  --smart-filters: #C6C4CC;
+  --spacing: 12px;
+  --state: 1;
+  --tag: Default;
+  --text-ai: Default;
+  --text-field: e.g John;
+  --two: false;
+  --unavailability-banner: true;
 }
 ```
 <!-- CSS:END -->
@@ -138,11 +247,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "Default"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "e296b6f03a6e29de51180db5111b2305f6ecb707"
+      "tokenSync.collection": "Collection"
     }
   },
   "FontFamily": {
@@ -155,11 +260,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "Inter"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Typography Variables",
-      "tokenSync.figmaKey": "cf65098768c8fba99902815d3d3a9e07f0a71a6a"
+      "tokenSync.collection": "Typography Variables"
     }
   },
   "FontSize": {
@@ -173,11 +274,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 16
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "89cceecef21e1c5738b6af0471139c188874ea37"
+        "tokenSync.collection": "Typography Variables"
       }
     },
     "H7_FontSize": {
@@ -190,11 +287,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 20
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "f50d1fb8a35d9ef981541b627bca963f3e9097a7"
+        "tokenSync.collection": "Typography Variables"
       }
     },
     "H6_FontSize": {
@@ -207,11 +300,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 24
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "8f179e2db9180bd590559f43825c06ee217972fa"
+        "tokenSync.collection": "Typography Variables"
       }
     },
     "H5_FontSize": {
@@ -224,11 +313,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 28
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "0465c33912e6c101c70f385b2a42a58aea29eec9"
+        "tokenSync.collection": "Typography Variables"
       }
     },
     "H4_FontSize": {
@@ -241,11 +326,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 32
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "8ed720d33e292fed936f4af67ad03844aab7d14c"
+        "tokenSync.collection": "Typography Variables"
       }
     },
     "H3_FontSize": {
@@ -258,11 +339,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 40
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "f267c8eaa2fb6c92caa8a92edd05f93678e5d699"
+        "tokenSync.collection": "Typography Variables"
       }
     },
     "H2_FontSize": {
@@ -275,11 +352,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 48
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "7aa55717ffa62fff0130ffb19f4ca3272d8d5da3"
+        "tokenSync.collection": "Typography Variables"
       }
     },
     "H1_FontSize": {
@@ -292,11 +365,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 56
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "673a2013672e423e5db9cb580f2895d0ec331935"
+        "tokenSync.collection": "Typography Variables"
       }
     }
   },
@@ -311,11 +380,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 20
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "9e154122c5c6ba5abe616e5008d2e397c6c9b3e5"
+        "tokenSync.collection": "Typography Variables"
       }
     },
     "H7_LineHeight": {
@@ -328,11 +393,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 24
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "5b5f9db4efa86c67fef63a1714d9dbf6ee54f823"
+        "tokenSync.collection": "Typography Variables"
       }
     },
     "H6_LineHeight": {
@@ -345,11 +406,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 28
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "cd92419bffc48026e4595a2da99d6216e3625e27"
+        "tokenSync.collection": "Typography Variables"
       }
     },
     "H5_LineHeight": {
@@ -362,11 +419,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 32
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "c41d060f7781ebd598292e24867eec3a25ecf753"
+        "tokenSync.collection": "Typography Variables"
       }
     },
     "H4_LineHeight": {
@@ -379,11 +432,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 40
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "8d08a4862fa85a23282098cec39d7f5ef7a9b3b8"
+        "tokenSync.collection": "Typography Variables"
       }
     },
     "H3_LineHeight": {
@@ -396,11 +445,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 48
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "67e6d281edbcd115fecfb0c5ee1284d43baaa4c6"
+        "tokenSync.collection": "Typography Variables"
       }
     },
     "H2_LineHeight": {
@@ -413,11 +458,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 56
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "803ba6333ad90e40743480e1e0899154dc119784"
+        "tokenSync.collection": "Typography Variables"
       }
     },
     "H1_LineHeight": {
@@ -430,11 +471,7 @@ block whenever this skill triggers.
         "tokenSync.resolved": {
           "Mode 1": 68
         },
-        "tokenSync.scopes": [
-          "ALL_SCOPES"
-        ],
-        "tokenSync.collection": "Typography Variables",
-        "tokenSync.figmaKey": "146ec069fa46689d5135ad9765577c70b54e8154"
+        "tokenSync.collection": "Typography Variables"
       }
     }
   },
@@ -448,11 +485,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "10 May"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Dates",
-      "tokenSync.figmaKey": "0b05a6deac3bbebfd31902dd64ce26bfb67a2ea6"
+      "tokenSync.collection": "Dates"
     }
   },
   "dateTo": {
@@ -465,11 +498,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "14 May"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Dates",
-      "tokenSync.figmaKey": "5f2234541a84b5d12b3c6274369387900f559a14"
+      "tokenSync.collection": "Dates"
     }
   },
   "dateFrom 1": {
@@ -482,11 +511,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "28 Apr"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Dates",
-      "tokenSync.figmaKey": "db671b05d24c815e5196cee57490bfefbccec235"
+      "tokenSync.collection": "Dates"
     }
   },
   "dateTo 1": {
@@ -499,11 +524,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "4 May"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Dates",
-      "tokenSync.figmaKey": "607e6d393cceca591cafc5bbae8409e70e934152"
+      "tokenSync.collection": "Dates"
     }
   },
   "dateFrom 2": {
@@ -516,11 +537,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "30 May"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Dates",
-      "tokenSync.figmaKey": "5019633e0f79846caa01b618b50f78f2fca3125b"
+      "tokenSync.collection": "Dates"
     }
   },
   "dateTo 2": {
@@ -533,11 +550,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "11 Jun"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Dates",
-      "tokenSync.figmaKey": "9a7f40526dd81f73cf7b5fcf67b432eccbb146d4"
+      "tokenSync.collection": "Dates"
     }
   },
   "dateFrom 3": {
@@ -550,11 +563,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "07 Jul"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Dates",
-      "tokenSync.figmaKey": "7e017e1d23ba66d33139f80f331c3592d8ed4ad7"
+      "tokenSync.collection": "Dates"
     }
   },
   "dateTo 3": {
@@ -567,11 +576,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "26 Jul"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Dates",
-      "tokenSync.figmaKey": "64ab2d33242d40e9051d40adc538dc1c56338689"
+      "tokenSync.collection": "Dates"
     }
   },
   "Neutral 900": {
@@ -586,11 +591,7 @@ block whenever this skill triggers.
         "Light theme": "#292829",
         "Dark theme": "#292928"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Theme",
-      "tokenSync.figmaKey": "224697b9191c3bf624a071f35159e7901ec1bd39"
+      "tokenSync.collection": "Theme"
     }
   },
   "Hotel name": {
@@ -609,11 +610,7 @@ block whenever this skill triggers.
         "Hotel 3": "Barceló Imagine",
         "Hotel 4": "Barceló Torre de Madrid"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Hotel card variables",
-      "tokenSync.figmaKey": "709abd98e81b47176df66b53faedff4b90686f70"
+      "tokenSync.collection": "Hotel card variables"
     }
   },
   "Hotel address": {
@@ -632,11 +629,7 @@ block whenever this skill triggers.
         "Hotel 3": "Agustin de Foxa, 32, Madrid, ES",
         "Hotel 4": "Plaza de España, 18, Madrid, ES"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Hotel card variables",
-      "tokenSync.figmaKey": "217fdc55b51bc6fe97ae43157204d44dba46c489"
+      "tokenSync.collection": "Hotel card variables"
     }
   },
   "Hotel distance": {
@@ -655,11 +648,7 @@ block whenever this skill triggers.
         "Hotel 3": "6 km from centre",
         "Hotel 4": "1 km from centre"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Hotel card variables",
-      "tokenSync.figmaKey": "5af70472edd7c958d43a9d0756f278747154b2d8"
+      "tokenSync.collection": "Hotel card variables"
     }
   },
   "Rating": {
@@ -678,11 +667,7 @@ block whenever this skill triggers.
         "Hotel 3": 9.100000381469727,
         "Hotel 4": 8.600000381469727
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Hotel card variables",
-      "tokenSync.figmaKey": "1546cdd4eeea37189bcb79d84900cd6604931ada"
+      "tokenSync.collection": "Hotel card variables"
     }
   },
   "Rating state": {
@@ -701,11 +686,7 @@ block whenever this skill triggers.
         "Hotel 3": "Wonderful",
         "Hotel 4": "Fabulous"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Hotel card variables",
-      "tokenSync.figmaKey": "fdf0fe3c3e5558a22de13e31590c55c37c467a2f"
+      "tokenSync.collection": "Hotel card variables"
     }
   },
   "Based on": {
@@ -724,11 +705,7 @@ block whenever this skill triggers.
         "Hotel 3": "Based on 3456 reviews",
         "Hotel 4": "Based on 3238 reviews"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Hotel card variables",
-      "tokenSync.figmaKey": "47c733d333052fd55545f47cd99a5245c0218221"
+      "tokenSync.collection": "Hotel card variables"
     }
   },
   "Rooms nd nights": {
@@ -747,11 +724,7 @@ block whenever this skill triggers.
         "Hotel 3": "For 1 room",
         "Hotel 4": "For 1 room"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Hotel card variables",
-      "tokenSync.figmaKey": "a0ece3ae1f05ed319a7260e06d6edf2252eeec5d"
+      "tokenSync.collection": "Hotel card variables"
     }
   },
   "Hotel price": {
@@ -770,11 +743,7 @@ block whenever this skill triggers.
         "Hotel 3": "1,782",
         "Hotel 4": "3,567"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Hotel card variables",
-      "tokenSync.figmaKey": "84677cfa244e47d0f4f45971c942693eafeb5a75"
+      "tokenSync.collection": "Hotel card variables"
     }
   },
   "Unavailability banner": {
@@ -787,11 +756,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": true
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "c7b16d465a619d552d21b5f3000b10813e112f93"
+      "tokenSync.collection": "Collection"
     }
   },
   "Similar properties": {
@@ -804,11 +769,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": true
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "0a50e8a2285ea7bc61b02a79b36a96ac0c6a227b"
+      "tokenSync.collection": "Collection"
     }
   },
   "Room rates": {
@@ -821,11 +782,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "0f7bce10ff7138fab750c1a6958896cedf13d883"
+      "tokenSync.collection": "Collection"
     }
   },
   "Date cell": {
@@ -838,11 +795,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": 0
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "df8e8b984e4568544401b5cec5ff6086d9d858af"
+      "tokenSync.collection": "Collection"
     }
   },
   "Check in": {
@@ -855,11 +808,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "10 Mai"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "06225a2f7d8653aa78cf7cc0a09c9554358d727c"
+      "tokenSync.collection": "Collection"
     }
   },
   "Check out": {
@@ -872,11 +821,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "15 Mai"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "338f07c6aea722e6034ff471154d07ac6fe323aa"
+      "tokenSync.collection": "Collection"
     }
   },
   "Choose room": {
@@ -889,11 +834,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "Change your dates"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "377358097614ec94f985f72214c9e01930286bc1"
+      "tokenSync.collection": "Collection"
     }
   },
   "Fontsize": {
@@ -906,11 +847,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": 18
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "6765de2c83ee0ec478c49b7b501ff4105fa97508"
+      "tokenSync.collection": "Collection"
     }
   },
   "Spacing": {
@@ -923,11 +860,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": 12
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "e807d7403de23d23e379505b702b0b49beea3df9"
+      "tokenSync.collection": "Collection"
     }
   },
   "2nd non availability": {
@@ -940,11 +873,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "244f4bc288dc6629bd5bbca6777f8c289fae5779"
+      "tokenSync.collection": "Collection"
     }
   },
   "State": {
@@ -957,11 +886,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "1"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "56de5097791f55bbbd60f7a539522d7d76083682"
+      "tokenSync.collection": "Collection"
     }
   },
   "One ": {
@@ -974,11 +899,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "56d99dbf7fa7bb6a71ff06c78a279f60358da752"
+      "tokenSync.collection": "Collection"
     }
   },
   "Two": {
@@ -991,11 +912,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "9a6d73493b5f4ee787ca95e6c80e0ddc9fd558f7"
+      "tokenSync.collection": "Collection"
     }
   },
   "close": {
@@ -1008,11 +925,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": true
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "cc1c49f37765e4a05523a0aede6332b70dbb59b9"
+      "tokenSync.collection": "Collection"
     }
   },
   "Old price": {
@@ -1025,11 +938,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "406bd1d4c4d729aef3b61e72beb153935dae6afe"
+      "tokenSync.collection": "Collection"
     }
   },
   "New price": {
@@ -1042,11 +951,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "#2D9F75"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "89405de9c2b221ca78521f29d9f9f7811fd9c7d9"
+      "tokenSync.collection": "Collection"
     }
   },
   "old-price": {
@@ -1059,11 +964,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "#1F2A37"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "766bb4ab1564d0b694cf7fea94f2f42ff1f74afd"
+      "tokenSync.collection": "Collection"
     }
   },
   "price toast": {
@@ -1076,11 +977,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "9b1c06745e808ec5d2fe33e42f8ec57559e976da"
+      "tokenSync.collection": "Collection"
     }
   },
   "refresh block": {
@@ -1093,11 +990,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "4345bfbcc34fd8d6a448fac550e8504601da6883"
+      "tokenSync.collection": "Collection"
     }
   },
   "Refresh banner": {
@@ -1110,11 +1003,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "a49c2dcae96895f1c19449706dcb8d608d395a88"
+      "tokenSync.collection": "Collection"
     }
   },
   "Text field": {
@@ -1127,11 +1016,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "e.g John"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "40c418aebdebd3f5febbae004f429590269154db"
+      "tokenSync.collection": "Collection"
     }
   },
   "Breakfast included tag": {
@@ -1144,11 +1029,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "6a2e0db6dbedf325d20e733aad1f02931fa76d22"
+      "tokenSync.collection": "Collection"
     }
   },
   "Breakfast and lunch tag": {
@@ -1161,11 +1042,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "cd19ceaf99ff233b96b6cedc137eab1c80d85a35"
+      "tokenSync.collection": "Collection"
     }
   },
   "Pet friendly tag": {
@@ -1178,11 +1055,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "380d47fb14f9fc08ecdfdc14b6c3246d5a158739"
+      "tokenSync.collection": "Collection"
     }
   },
   "Meal plan tag": {
@@ -1195,11 +1068,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "d54937347d5e3b753e73197e5fbef57accea6cc3"
+      "tokenSync.collection": "Collection"
     }
   },
   "Filter tags": {
@@ -1212,11 +1081,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "e1e84196f03df70ed660d1e4cada4995f53993f2"
+      "tokenSync.collection": "Collection"
     }
   },
   "Clear All button": {
@@ -1229,11 +1094,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "0186e8bc9181f6f2210c335fd822e8a4b9394893"
+      "tokenSync.collection": "Collection"
     }
   },
   "Left arrow": {
@@ -1246,11 +1107,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "282e8c390d3aa4dbfc546f00bdd8165604ff9d99"
+      "tokenSync.collection": "Collection"
     }
   },
   "Right arrow ": {
@@ -1263,11 +1120,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": true
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "a8bc96e76c4c040a30a20746a385e1980a2c76f9"
+      "tokenSync.collection": "Collection"
     }
   },
   "Before check-in": {
@@ -1280,11 +1133,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": true
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "7eac9f6a586fa33f4589b02b918f2de67629d400"
+      "tokenSync.collection": "Collection"
     }
   },
   "After check-out": {
@@ -1297,11 +1146,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "885cd7deeb1679f67f7544a858f72c52380ed17e"
+      "tokenSync.collection": "Collection"
     }
   },
   "Nationaility": {
@@ -1314,11 +1159,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "Select nationality"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "04e30fa5aeea14978ea319bede76ce4f7aed0663"
+      "tokenSync.collection": "Collection"
     }
   },
   "Placeholder": {
@@ -1331,11 +1172,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "#9DA4AE"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "d3795160ef5ade0e136143a7f7b4ead762d54321"
+      "tokenSync.collection": "Collection"
     }
   },
   "AI interactive text": {
@@ -1348,11 +1185,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "Ask anything..."
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "c9471bc1c20faf1e22bbca32a499c77ce8534675"
+      "tokenSync.collection": "Collection"
     }
   },
   "AI interactive button": {
@@ -1365,11 +1198,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "Disabled"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "61ea4a5d7b3bcfac3568bb271e445e4c919a4d67"
+      "tokenSync.collection": "Collection"
     }
   },
   "AI suggested questions": {
@@ -1382,11 +1211,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": true
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "f83d83603b9fb56a9d1bf220961100bbf9969d25"
+      "tokenSync.collection": "Collection"
     }
   },
   "AI welcome": {
@@ -1399,11 +1224,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": true
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "170d9af35438b9193ade9271c83960a74ab13830"
+      "tokenSync.collection": "Collection"
     }
   },
   "AI conversation": {
@@ -1416,11 +1237,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "cda8497288ba29748a3bfadf14fd9707e2288e88"
+      "tokenSync.collection": "Collection"
     }
   },
   "Hotel history": {
@@ -1433,11 +1250,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "57b990f41ed0e7e2cf397234da296f17340ec4f2"
+      "tokenSync.collection": "Collection"
     }
   },
   "BBBBBB": {
@@ -1450,11 +1263,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": true
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "a15d797b41933330ed0b925994b0ccf219993c2f"
+      "tokenSync.collection": "Collection"
     }
   },
   "AI Loading": {
@@ -1467,11 +1276,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "3"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "79f9a54ab5c0aa44a2cfa20a1b06708ed0cb5dab"
+      "tokenSync.collection": "Collection"
     }
   },
   "Text ai": {
@@ -1484,11 +1289,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "Default"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "e3e8c0dd2bc55b6e4273501ec5d3e40e689ac5cd"
+      "tokenSync.collection": "Collection"
     }
   },
   "AI modal title": {
@@ -1501,11 +1302,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "12f8186062e35eb7c3216f8ad4368341005cebbc"
+      "tokenSync.collection": "Collection"
     }
   },
   "Smart filters text": {
@@ -1518,11 +1315,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "Example: I want a place with great reviews and free cancellation"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "3b574ee1521e21d8f8d22e09337595c16d22e18c"
+      "tokenSync.collection": "Collection"
     }
   },
   "Smart filters": {
@@ -1535,11 +1328,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "#C6C4CC"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "c8da8e73b9ac2288de1f9fbb7215445abb36a4bb"
+      "tokenSync.collection": "Collection"
     }
   },
   "Filtered hotels": {
@@ -1552,11 +1341,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": true
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "6d65f1cce2f9095d5cde954ca27d542f15488cc6"
+      "tokenSync.collection": "Collection"
     }
   },
   "Search semantic": {
@@ -1569,11 +1354,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "Enter a destination"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "5b04c3fb0ee106de92882a6f72254ed078878b22"
+      "tokenSync.collection": "Collection"
     }
   },
   "Search section": {
@@ -1586,11 +1367,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "Manual"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "4dd0b5c9e0d59d238b79dd7a508857231be7a082"
+      "tokenSync.collection": "Collection"
     }
   },
   "Semantic dropdown": {
@@ -1603,11 +1380,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "8a51fa88b91c034358e4a4cf8bda07a807e74889"
+      "tokenSync.collection": "Collection"
     }
   },
   "AI semantic text": {
@@ -1620,11 +1393,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": "Default"
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "d51f290d825ec40fa70596a7ed9a9c2bb839de50"
+      "tokenSync.collection": "Collection"
     }
   },
   "Filter": {
@@ -1637,11 +1406,7 @@ block whenever this skill triggers.
       "tokenSync.resolved": {
         "Mode 1": false
       },
-      "tokenSync.scopes": [
-        "ALL_SCOPES"
-      ],
-      "tokenSync.collection": "Collection",
-      "tokenSync.figmaKey": "ef2e078b2a49d0c0155d1acd4379242829bdfd9e"
+      "tokenSync.collection": "Collection"
     }
   }
 }
