@@ -1,0 +1,103 @@
+name: Recompile design tokens
+
+# Direct push trigger, not a cron poll — chosen over the polling option
+# because a push event is immediate and exact (we know precisely which
+# commit changed SKILL.md), where a cron job would mean checking on a
+# schedule and guessing whether anything changed since last time. See
+# docs/repo-per-file-design.md in the pipeline repo for the full comparison.
+#
+# Trigger and commit target are now the SAME file (SKILL.md) — this isn't a
+# self-triggering loop: pushes made with the default GITHUB_TOKEN (which is
+# what "Commit if changed" below uses, via actions/checkout's credentials)
+# don't fire other workflow runs. That's a documented, deliberate GitHub
+# Actions protection against exactly this shape of loop, not an assumption
+# — see docs/repo-per-file-design.md.
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "SKILL.md"
+
+permissions:
+  contents: write
+
+jobs:
+  recompile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # Recompile, commit, and push in a single retrying loop rather than as
+      # separate steps. Recompiling once and pushing once raced in practice:
+      # the plugin also pushes straight to main, so if main moves between
+      # this job's checkout and its own push (another push landing, or two
+      # workflow runs overlapping), a plain `git push` gets rejected
+      # ("! [rejected] main -> main (fetch first)") and the whole job fails
+      # — hit for real, not hypothetical. Each retry re-fetches the actual
+      # latest main and reruns recompile.mjs against it (not a rebase of a
+      # stale diff, which could reapply outdated content) before trying to
+      # push again. recompile.mjs is deterministic for the same input, so
+      # this converges once nothing is racing it anymore.
+      #
+      # GitHub Actions runs bash `run:` steps with `-e` by default, which
+      # would abort this step the instant recompile.mjs exits non-zero —
+      # including exit 2 (wrote the file fine, just flagging a blocking
+      # TODO or a dangling var() reference), which would mean the freshly-
+      # regenerated file never gets pushed at all. Checked this rather than
+      # assumed it: confirmed `-e` is genuinely on by default for bash
+      # steps. Worked around with `if node ...; then / else`, which is a
+      # documented exemption from errexit — the exit code is captured, not
+      # allowed to kill the step, so exit-2 output can still be committed
+      # and pushed before the job fails at the very end.
+      - name: Recompile and push (retries on a concurrent push)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          needs_human=0
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+
+            if node .github/scripts/recompile.mjs; then
+              recompile_exit=0
+            else
+              recompile_exit=$?
+            fi
+
+            if [ "$recompile_exit" -eq 1 ]; then
+              echo "recompile.mjs refused to process this file (see its output above)."
+              echo "Not retrying — the input didn't change, so a retry would fail identically."
+              exit 1
+            elif [ "$recompile_exit" -eq 2 ]; then
+              needs_human=1
+            fi
+
+            git add SKILL.md
+            if git diff --cached --quiet; then
+              echo "No changes after recompiling — nothing to commit."
+              if [ "$needs_human" -eq 1 ]; then
+                echo "recompile.mjs flagged something needing a human even though nothing changed here — failing the job so it stays visible."
+                exit 1
+              fi
+              exit 0
+            fi
+
+            git commit -m "Recompile SKILL.md"
+            if git push origin HEAD:main; then
+              echo "Pushed on attempt $attempt."
+              if [ "$needs_human" -eq 1 ]; then
+                echo "Pushed successfully — the file is current — but recompile.mjs flagged something needing a human (see its output above). Failing the job so that shows up as attention-needed, not a clean run."
+                exit 1
+              fi
+              exit 0
+            fi
+            echo "Push rejected on attempt $attempt (main moved) — retrying…"
+            sleep $((RANDOM % 5 + 1))
+          done
+          echo "Failed to push after 5 attempts — main kept moving faster than this job could keep up."
+          exit 1
